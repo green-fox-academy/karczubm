@@ -1,0 +1,59 @@
+body{
+    margin: 0px;
+    font-family:Arial, Helvetica, sans-serif; 
+}
+h1{
+    font-size: 20px;
+}
+h2{
+    margin: 0px;
+}
+#header{
+    background-color:darkcyan;
+    border:2px solid black;
+    padding: 5px;
+}
+#header p{
+    margin-left: 10%;
+    font-size: 28px;
+}
+#newPost{
+    margin-left: 10%;
+}
+#posts{
+    margin-left: 10%;
+}
+
+.message{
+    margin-bottom: 15px;
+}
+.fieldTitle{
+    font-weight: bold; 
+}
+
+#messageTitle{
+    width: 20%; 
+}
+#messageBody{
+    width: 90%;
+    height: 60px;
+}
+.textbox{
+    min-width:180px;
+    box-shadow: 5px 7px 8px black;
+    border: 1px solid black;
+    margin: 0px 10% 10px 0px;
+}
+@keyframes takar{
+    /** The @keyframes rule specifies the animation code.**/
+    from{box-shadow: 5px 7px 8px black;}
+    to{box-shadow: 5px 7px 8px darkcyan;}
+}
+.textbox:hover{
+   animation: takar 0.18s linear;
+   box-shadow: 5px 7px 8px darkcyan;
+}
+.textbox:focus{
+    box-shadow: 5px 7px 8px darkcyan;
+}
+
