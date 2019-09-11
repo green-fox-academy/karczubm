@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 [A gfa-n belüli main repo-m.](https://github.com/green-fox-academy/karczubm.git)
 [Osztály tanterv.](https://github.com/green-fox-academy/zigzag-syllabus.git)
