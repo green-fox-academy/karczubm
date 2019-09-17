@@ -23,13 +23,13 @@ public class ListInstructions1 {
             William
             John
             Amanda*/
-        /*A
-            System.out.println(names);*/
 
-        Iterator<String> it = names.iterator();
-        while (it.hasNext()) {
-            System.out.println(it.next());
-        }
+        System.out.println(names);
+        /* Alternatív megoldás
+            Iterator<String> it = names.iterator();
+            while (it.hasNext()) {
+                System.out.println(it.next());
+        }*/
     /*Iterate through the list and print
         1. William
         2. John

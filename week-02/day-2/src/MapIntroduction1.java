@@ -26,7 +26,7 @@ public class MapIntroduction1 {
         //Print all the values
         System.out.println(myMap.values());
         //Add value D with the key 68
-        myMap.put(68,"D");
+        myMap.put(68, "D");
         //Print how many key-value pairs are in the map
         System.out.println(myMap.size());
         //Print the value that is associated with key 99
