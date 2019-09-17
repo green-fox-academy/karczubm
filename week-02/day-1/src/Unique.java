@@ -1,21 +1,27 @@
 public class Unique {
     public static int[] unique(int[] arr) {
         int tmp[] = new int[arr.length];
+        for (int i = 0; i <tmp.length ; i++) {
+            tmp[i]=1;
+        }
         int counter = 0;
         for (int i = 0; i <arr.length; i++) {
-            for (int j = 1; j <arr.length; j++) {
+            for (int j =i+1; j <arr.length; j++) {
                 if (arr[i] == arr[j]) {
                     counter++;
-                    tmp[i] = 1;
                     tmp[j] = 0;
                 }
             }
         }
-        int[] ret = new int[counter];
+        int[] ret = new int[arr.length-counter];
+        for (int i = 0; i < ret.length ; i++) {
+            ret[i]=1;
+        }
         counter = 0;
         for (int i = 0; i <arr.length; i++) {
             if (tmp[i] == 1) {
                 ret[counter] = arr[i];
+                counter++;
             }
         }
         return ret;
