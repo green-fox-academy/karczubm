@@ -12,11 +12,13 @@ public class FourRectangle {
         // avoid code duplication.
         Random random=new Random();
         for (int i = 0; i < 3; i++) {
-            int size=random.nextInt(40);
-            int x=random.nextInt(WIDTH-size);
-            int y=random.nextInt(HEIGHT-size);
+
+            int squareSizeA=random.nextInt(40);;
+            int squareSizeB=random.nextInt(40);;
+            int x=random.nextInt(WIDTH-squareSizeA);
+            int y=random.nextInt(HEIGHT-squareSizeB);
             setRandomColor(graphics);
-            graphics.drawRect(x,y,size,size);
+            graphics.drawRect(x,y,squareSizeA,squareSizeB);
         }
 
     }
