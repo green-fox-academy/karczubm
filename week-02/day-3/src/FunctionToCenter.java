@@ -1,30 +1,27 @@
 import javax.swing.*;
 
 import java.awt.*;
-import java.util.Random;
 
 import static javax.swing.JFrame.EXIT_ON_CLOSE;
 
-public class FourRectangle {
-
-    public static void mainDraw(Graphics graphics){
-        // draw four different size and color rectangles.
-        // avoid code duplication.
-        Random random=new Random();
-        for (int i = 0; i <= 3; i++) {
-
-            int squareSizeA=random.nextInt(320);
-            int squareSizeB=random.nextInt(320);
-            int x=random.nextInt(WIDTH-squareSizeA);
-            int y=random.nextInt(HEIGHT-squareSizeB);
-            setRandomColor(graphics);
-            graphics.drawRect(x,y,squareSizeA,squareSizeB);
+public class FunctionToCenter {
+    public static void mainDraw(Graphics graphics) {
+        // Create a function that draws a single line and takes 3 parameters:
+        // The x and y coordinates of the line's starting point and the graphics
+        // and draws a line from that point to the center of the canvas.
+        // Fill the canvas with lines from the edges, every 20 px, to the center.
+        int x=0;
+        int y=0;
+        int step=20;
+        for (int i = 0; i <= 320; i+=step) {
+            drawLineToCenter(i,0,graphics);
+            drawLineToCenter(i,HEIGHT,graphics);
+            drawLineToCenter(0,i,graphics);
+            drawLineToCenter(WIDTH,i,graphics);
         }
-
     }
-    public static void setRandomColor(Graphics graphics){
-        Random random=new Random();
-        graphics.setColor(new Color(random.nextInt(255),random.nextInt(255),random.nextInt(255)));
+    public static void drawLineToCenter(int x, int y, Graphics graphics) {
+        graphics.drawLine(x,y,WIDTH/2,HEIGHT/2);
     }
 
     // Don't touch the code below

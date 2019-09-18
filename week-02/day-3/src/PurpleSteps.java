@@ -1,30 +1,27 @@
 import javax.swing.*;
 
 import java.awt.*;
-import java.util.Random;
 
 import static javax.swing.JFrame.EXIT_ON_CLOSE;
 
-public class FourRectangle {
-
-    public static void mainDraw(Graphics graphics){
-        // draw four different size and color rectangles.
-        // avoid code duplication.
-        Random random=new Random();
-        for (int i = 0; i <= 3; i++) {
-
-            int squareSizeA=random.nextInt(320);
-            int squareSizeB=random.nextInt(320);
-            int x=random.nextInt(WIDTH-squareSizeA);
-            int y=random.nextInt(HEIGHT-squareSizeB);
-            setRandomColor(graphics);
-            graphics.drawRect(x,y,squareSizeA,squareSizeB);
+public class PurpleSteps {
+    public static void mainDraw(Graphics graphics) {
+        // Reproduce this:
+        // [https://github.com/green-fox-academy/teaching-materials/blob/master/workshop/drawing/assets/r3.png]
+        int howManyRectDoYouWant = 12;
+        int size = 20;
+        for (int i = 0; i < howManyRectDoYouWant; i++) {
+            drawFilledRect(size * i, size * i, size, graphics);
         }
 
     }
-    public static void setRandomColor(Graphics graphics){
-        Random random=new Random();
-        graphics.setColor(new Color(random.nextInt(255),random.nextInt(255),random.nextInt(255)));
+
+    public static void drawFilledRect(int x, int y, int size, Graphics graphics) {
+        graphics.setColor(Color.magenta);
+        graphics.fillRect(x, y, size, size);
+        graphics.setColor(Color.BLACK);
+        graphics.drawRect(x, y, size, size);
+
     }
 
     // Don't touch the code below
