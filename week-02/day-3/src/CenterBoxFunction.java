@@ -1,25 +1,20 @@
 import javax.swing.*;
 
 import java.awt.*;
-import java.util.Random;
 
 import static javax.swing.JFrame.EXIT_ON_CLOSE;
 
-public class GoToCenter {
-    public static void mainDraw(Graphics graphics) {
-        // Create a function that draws a single line and takes 3 parameters:
-        // The x and y coordinates of the line's starting point and the graphics
-        // and draws a line from that point to the center of the canvas.
-        // Draw at least 3 lines with that function using a loop.
-        for (int i = 0; i < 3; i++) {
-            int x=new Random().nextInt(320);
-            int y=new Random().nextInt(320);
-            drawLineToCenter(x,y,graphics);
-        }
-    }
+public class CenterBoxFunction {
 
-    public static void drawLineToCenter(int x, int y, Graphics graphics) {
-        graphics.drawLine(x,y,WIDTH/2,HEIGHT/2);
+    public static void mainDraw(Graphics graphics){
+        // create a function that draws one square and takes 2 parameters:
+        // the square size and the graphics
+        // and draws a square of that size to the center of the canvas.
+        // draw 3 squares with that function.
+        // avoid code duplication.
+
+
+
     }
 
     // Don't touch the code below

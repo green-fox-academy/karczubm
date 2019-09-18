@@ -12,8 +12,8 @@ public class HorizontalLines {
         // and draws a 50 long horizontal line from that point.
         // Draw at least 3 lines with that function using a loop.
         for (int i = 0; i < 3; i++) {
-            int x = new Random().nextInt(255);
-            int y = new Random().nextInt(255);
+            int x = new Random().nextInt(320-50);
+            int y = new Random().nextInt(320);
             drawHorizontalLine(x, y, graphics);}
 
 
