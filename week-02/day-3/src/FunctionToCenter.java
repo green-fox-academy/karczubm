@@ -10,14 +10,17 @@ public class FunctionToCenter {
         // The x and y coordinates of the line's starting point and the graphics
         // and draws a line from that point to the center of the canvas.
         // Fill the canvas with lines from the edges, every 20 px, to the center.
-        int x=0;
-        int y=0;
-        int step=20;
-        for (int i = 0; i <= 320; i+=step) {
-            drawLineToCenter(i,0,graphics);
-            drawLineToCenter(i,HEIGHT,graphics);
-            drawLineToCenter(0,i,graphics);
-            drawLineToCenter(WIDTH,i,graphics);
+
+        int distance=0;
+        int green=255;//complementer color of red
+        for (int i = 0; i <= 15; i++) {
+            graphics.setColor(new Color(255,green,122));
+            drawLineToCenter(distance,0,graphics);
+            drawLineToCenter(distance,HEIGHT,graphics);
+            drawLineToCenter(0,distance,graphics);
+            drawLineToCenter(WIDTH,distance,graphics);
+            distance+=20;
+            green-=16;
         }
     }
     public static void drawLineToCenter(int x, int y, Graphics graphics) {
