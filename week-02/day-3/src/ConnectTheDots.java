@@ -14,7 +14,7 @@ public class ConnectTheDots {
         // {120, 100}, {85, 130}, {50, 100}}
         int[][] box = {{10, 10}, {290, 10}, {290, 290}, {10, 290}};
         int[][] something = {{50, 100}, {70, 70}, {80, 90}, {90, 90}, {100, 70}, {120, 100}, {85, 130}, {50, 100}};
-        connector(box, graphics);
+        connector(something, graphics);
     }
 
     public static void connector(int[][] dots, Graphics graphics) {

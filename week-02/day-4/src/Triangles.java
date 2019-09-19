@@ -1,21 +1,61 @@
 import javax.swing.*;
 
 import java.awt.*;
+import java.util.ArrayList;
 
 import static javax.swing.JFrame.EXIT_ON_CLOSE;
 
 public class Triangles {
     public static void mainDraw(Graphics graphics) {
-        int numberOfTriangles = 10;
-        int size=20;
-        int[][]triangle={{},{},{},{}};// a harmadik a kövi tömb elsője?
-        int mid=WIDTH/2;
-        for (int i = 0; i < ; i++) {
-            for (int j = 0; j < ; j++) {
 
+        /*int[][]triangle={{},{},{},{}};
+        a harmadik a kövi tömb elsője? ArrayList-tel
+        1.2.3. sorváltás 1.:=3. & soron belül 2.:=1.
+        +nested for+ piramis logika
+         */
+        //pitagoraszi számhármas: 17,15,8; 65,56,33;
+        int triangleHeigth = 15;//65
+        int triangleWidth = 16;//56
+        int rows = 10;
+        Integer[][] tmp = new Integer[3][2];
+        ArrayList<Integer[][]> coordinateList = new ArrayList<>();
+
+        Integer[] seed = {WIDTH / 2 - triangleWidth / 2, triangleHeigth};
+        for (){
+
+        for () {
+            //zero coordinates
+            tmp[0] = seed;
+            //1. coord
+            tmp[1][0] = tmp[0][0] + triangleWidth / 2;
+            tmp[1][1] = tmp[0][1] - triangleHeigth;
+            //2. coord
+            tmp[2][0] = tmp[1][0] + triangleWidth / 2;
+            tmp[2][1] = tmp[1][1] + triangleHeigth;
+            //adding to array list.
+            coordinateList.add(tmp);
+            //new zero coord
+            seed = tmp[1];
+        }}
+
+        //2.3. szamítás
+        //add array list ++
+
+    }
+
+    public static void connector(int[][] dots, Graphics graphics) {
+        graphics.setColor(Color.GREEN);
+        for (int i = 0; i < dots.length; i++) {
+            if (i != dots.length - 1) //last index
+            {
+                graphics.drawLine(dots[i][0], dots[i][1], dots[i + 1][0], dots[i + 1][1]);
+            } else {
+                graphics.drawLine(dots[i][0], dots[i][1], dots[0][0], dots[0][1]);
             }
+
         }
     }
+
 
     // Don't touch the code below
     static int WIDTH = 320;
