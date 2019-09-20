@@ -16,35 +16,35 @@ public class Triangles {
         //pitagoraszi számhármas: 17,15,8; 65,56,33;
         int triangleHeigth = 15;//65
         int triangleWidth = 16;//56
-        int rows = 10;
+        int rows = 15;
         Integer[][] tmp = new Integer[3][2];
-        ArrayList<Integer[][]> coordinateList = new ArrayList<>();
+        //Integer[] seed = {WIDTH / 2 - triangleWidth / 2, triangleHeigth};
+        Integer[] seed = {WIDTH / 2, 0};
+        Integer[] seedOfNextLine = new Integer[2];
 
-        Integer[] seed = {WIDTH / 2 - triangleWidth / 2, triangleHeigth};
-        for (){
-
-        for () {
-            //zero coordinates
-            tmp[0] = seed;
-            //1. coord
-            tmp[1][0] = tmp[0][0] + triangleWidth / 2;
-            tmp[1][1] = tmp[0][1] - triangleHeigth;
-            //2. coord
-            tmp[2][0] = tmp[1][0] + triangleWidth / 2;
-            tmp[2][1] = tmp[1][1] + triangleHeigth;
-            //adding to array list.
-            coordinateList.add(tmp);
-            //new zero coord
-            seed = tmp[1];
-        }}
-
-        //2.3. szamítás
-        //add array list ++
-
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j <= i; j++) {
+                if (j == 0) {
+                    seedOfNextLine[0] = seed[0] - triangleWidth / 2;
+                    seedOfNextLine[1] = seed[1] + triangleHeigth;
+                    seed=seedOfNextLine;
+                }
+                tmp[0] = seed;
+                //1. coord
+                tmp[1][0] = tmp[0][0] + triangleWidth / 2;
+                tmp[1][1] = tmp[0][1] - triangleHeigth;
+                //2. coord
+                tmp[2][0] = tmp[1][0] + triangleWidth / 2;
+                tmp[2][1] = tmp[1][1] + triangleHeigth;
+                //new zero coord
+                connector(tmp, graphics);
+                seed = tmp[2];
+            }
+            seed=seedOfNextLine;
+        }
     }
 
-    public static void connector(int[][] dots, Graphics graphics) {
-        graphics.setColor(Color.GREEN);
+    public static void connector(Integer[][] dots, Graphics graphics) {
         for (int i = 0; i < dots.length; i++) {
             if (i != dots.length - 1) //last index
             {
