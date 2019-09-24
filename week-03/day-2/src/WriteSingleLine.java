@@ -1,9 +1,10 @@
 import java.io.File;
-import java.io.FileWriter;
-import java.io.RandomAccessFile;
+import java.nio.file.Files;
+import java.io.IOException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.nio.file.Files;
+import java.util.Collections;
+import java.util.List;
 
 public class WriteSingleLine {
     public static void main(String[] args) {
@@ -12,11 +13,20 @@ public class WriteSingleLine {
         // The file should be named "my-file.txt"
         // In case the program is unable to write the file,
         // It should print the following error message: "Unable to write file: my-file.txt"
+        fileWriter("my-text.txt", "Marci");
 
     }
-    public static void fileWriter(String fileName, String newLine){
+
+    public static void fileWriter(String fileName, String newLine) {
         Path filePath = Paths.get("assets", fileName);
-        Files file=new Files();
+        try {
+            List<String> listOfLines = Files.readAllLines(filePath);
+            listOfLines.add(newLine);
+            Files.write(filePath, listOfLines);
+            //System.out.println(listOfLines);
+        } catch (IOException e) {
+        }
+
 
     }
 }
