@@ -28,10 +28,12 @@ public class Triangles {
                     seedOfNextLine[0] = seed[0] - triangleWidth / 2;
                     seedOfNextLine[1] = seed[1] + triangleHeigth;
                     //giving it to the first unit of a row
-                    seed = seedOfNextLine;
+                    seed[0] = seedOfNextLine[0];
+                    seed[1] = seedOfNextLine[1];
                 }
                 //0. coord
-                tmp[0] = seed;
+                tmp[0][0] = seed[0];
+                tmp[0][1]=seed[1];
                 //1. coord
                 tmp[1][0] = tmp[0][0] + triangleWidth / 2;
                 tmp[1][1] = tmp[0][1] - triangleHeigth;
@@ -43,10 +45,12 @@ public class Triangles {
                 //drawing
                 connector(tmp, graphics);
                 //giving it to the next unit of a row
-                seed = tmp[2];
+                seed[0] = tmp[2][0];
+                seed[1] = tmp[2][1];
             }
             //giving it to the first of the next row
-            seed = seedOfNextLine;
+            seed[0] = seedOfNextLine[0];
+            seed[1] = seedOfNextLine[1];
         }
     }
 
