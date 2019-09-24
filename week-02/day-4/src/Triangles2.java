@@ -24,7 +24,7 @@ public class Triangles2 {
 
             graphics.drawLine((WIDTH / 2 - (rows - 1) * triangleWidth / 2) + triangleWidth * i, (rows - 1) * triangleHeigth,
                     WIDTH / 2 + i * triangleWidth / 2, triangleHeigth * i);
-            //graphics.drawLine((WIDTH / 2 - rows * triangleWidth / 2)+triangleWidth/2,(rows - 1) * triangleHeigth,WIDTH,HEIGHT);
+
 
         }
 

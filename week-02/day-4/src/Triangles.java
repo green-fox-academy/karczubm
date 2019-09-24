@@ -10,7 +10,7 @@ public class Triangles {
 
         /*int[][]triangle={{},{},{},{}};
         a harmadik a kövi tömb elsője? ArrayList-tel
-        1.2.3. sorváltás 1.:=3. & soron belül 2.:=1.
+        1.2.3. sorváltás 1.:=2. & soron belül 3.:=1.
         +nested for+ piramis logika
          */
         //pitagoraszi számhármas: 17,15,8; 65,56,33;
@@ -18,29 +18,35 @@ public class Triangles {
         int triangleWidth = 16;//56
         int rows = 15;
         Integer[][] tmp = new Integer[3][2];
-        //Integer[] seed = {WIDTH / 2 - triangleWidth / 2, triangleHeigth};
         Integer[] seed = {WIDTH / 2, 0};
         Integer[] seedOfNextLine = new Integer[2];
 
         for (int i = 0; i < rows; i++) {
             for (int j = 0; j <= i; j++) {
                 if (j == 0) {
+                    //save for the next row
                     seedOfNextLine[0] = seed[0] - triangleWidth / 2;
                     seedOfNextLine[1] = seed[1] + triangleHeigth;
-                    seed=seedOfNextLine;
+                    //giving it to the first unit of a row
+                    seed = seedOfNextLine;
                 }
+                //0. coord
                 tmp[0] = seed;
                 //1. coord
                 tmp[1][0] = tmp[0][0] + triangleWidth / 2;
                 tmp[1][1] = tmp[0][1] - triangleHeigth;
                 //2. coord
-                tmp[2][0] = tmp[1][0] + triangleWidth / 2;
+                tmp[2][0] = tmp[1][0] + triangleWidth / 2;  //ERROR: tmp[0]=tmp[2] (& seed=tmp[2])
                 tmp[2][1] = tmp[1][1] + triangleHeigth;
-                //new zero coord
+                //tmp[2][0]=tmp[0][0]+triangleWidth; //same coord. from the 0. not 1., but error is same
+                //tmp[2][1]=tmp[0][1];
+                //drawing
                 connector(tmp, graphics);
+                //giving it to the next unit of a row
                 seed = tmp[2];
             }
-            seed=seedOfNextLine;
+            //giving it to the first of the next row
+            seed = seedOfNextLine;
         }
     }
 
