@@ -22,7 +22,6 @@ public class ReversedOrder {
         for (int i = originalFile.size(); i >0 ; i--) {
             newLine = originalFile.get(i-1);
             descryptedFile.add(newLine);
-            newLine = "";
         }
         try {
             Files.write(filePath, descryptedFile);
