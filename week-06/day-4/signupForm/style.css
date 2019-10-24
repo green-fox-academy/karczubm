@@ -1,0 +1,89 @@
+body{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    background-color: rgb(216, 215, 215);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+#threeHolder{
+    background-color: white;
+    padding: 50px;
+    margin-top: 30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+#threeHolder .box{
+    margin: 0px 20px 0px 20px;
+}
+#signup{
+display: flex;
+flex-direction: column;
+
+}
+#signup *{
+    margin: 10px;
+}
+#signup legend{
+font-size: 30px;
+}
+#signup input{
+    border:0;
+    border-bottom:1px solid gray ;
+}
+#signup input:focus{
+    border-bottom:2px solid rgb(74, 184, 133) ;
+    outline: none;
+}
+#signup button{
+    color: white;
+    border:none;
+    background-color: rgb(74, 184, 133);
+    width: 120px;
+    height: 30px;
+    border-radius: 5px;
+}
+
+#or{
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+}
+#or p{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(211, 206, 206);
+    border-radius: 25px;
+    width: 50px;
+    height: 50px;
+}
+#links{
+display: flex;
+flex-direction: column;
+justify-content: center;
+padding: 30px 0px 30px 0px;
+}
+
+#links a{
+    color: white;
+    height: 30px;
+    width: 200px;
+    text-decoration: none;
+    font-size: large;
+    text-align: center;
+    padding-top: 8px;
+    margin-top: 10px;
+    border-radius: 5px;
+}
+#facebook{
+    background-color: blue;
+}
+#twitter{
+    background-color: cornflowerblue;
+}
+#google{
+    background-color: firebrick;
+}

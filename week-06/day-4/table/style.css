@@ -1,0 +1,54 @@
+body{
+    background-color: blue;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+table{
+    width: 500px;
+    border-spacing: 1px;
+    margin: 10px;}
+th{
+    padding: 10px;
+    background-color: black;
+    text-align: left;
+    color:  rgb(207, 202, 202);
+    border-bottom: 3px grey solid;
+}
+td{
+    padding: 10px;
+}
+tr{
+    height: 50%;
+}
+td, th{
+    width: 50%;
+}
+
+
+tr:nth-child(2n+2){
+    background-color: rgb(207, 202, 202);
+}
+tr:nth-child(2n+1){
+    background-color: white;
+}
+table{
+    border-collapse: collapse;
+}
+
+tr:nth-child(n+2):nth-child(-n+5){
+    border-bottom:2px solid grey ;
+}
+td:first-child, th:first-child{
+    border-right: grey solid 2px;
+}
+th:first-child{
+border-top-left-radius: 5px;
+}
+th:last-child{
+    border-top-right-radius: 5px;
+}
+tr:last-child td:first-child{
+border-bottom-left-radius: 5px;
+}
+tr:last-child td:last-child{
+    border-bottom-right-radius:5px;
+}
