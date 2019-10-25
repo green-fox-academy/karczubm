@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>MyWebshop</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<h1>My Shop</h1>
+<div id="links" class="part">
+    <a href="/myWebShop/available">only avaible</a>
+    <a href="/myWebShop/cheapest">chipest first</a>
+    <a href="/myWebShop/nike">contains nike</a>
+    <a href="/myWebShop/">average stock</a>
+    <a href="/myWebShop/mostExpensive">most expensive available</a>
+
+</div>
+<form action="/search" class="part" method="POST">
+    <label for="search">Search for:</label>
+    <input type="text" name="search" id="search">
+    <button type="submit">Search</button>
+</form>
+<table id="items" class="part">
+    <tr id="head">
+        <th>Name</th>
+        <th>Description</th>
+        <th>Price</th>
+        <th>Quantity</th>
+    </tr>
+    <tr th:each="item : ${items}">
+        <td th:text="${item.getName()}"></td>
+        <td th:text="${item.getDescription()}"></td>
+        <td th:text="${item.getPrice()}"></td>
+        <td th:text="${item.getQuantity()}"></td>
+    </tr>
+</table>
+</body>
+</html>
