@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>ToDoList</title>
+</head>
+<body>
+<h1>To Dos for today:</h1>
+
+<table  style="border: 1px solid black">
+    <tr>
+       <th>ID</th>
+       <th>description</th>
+       <th>urgent</th>
+       <th>done</th>
+    </tr>
+    <tr th:each="todo:${todolist}" >
+        <td th:text="${todo.getId()}"></td>
+        <td th:text="${todo.getTitle()}"></td>
+        <td th:text="${todo.isUrgent()}"></td>
+        <td th:text="${todo.isDone()}"></td>
+    </tr>
+</table>
+</body>
+</html>

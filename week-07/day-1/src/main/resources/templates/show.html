@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>Accounts</h1>
+    <ul th:each="account:${accountList}">
+      <li th:text="|Name: ${account.getName()},
+      species: ${account.getAnimalType()},
+      balance: ${#numbers.formatDecimal(account.getBalance(),3,2,'POINT')} Ł|"></li>
+    </ul>
+</body>
+</html>

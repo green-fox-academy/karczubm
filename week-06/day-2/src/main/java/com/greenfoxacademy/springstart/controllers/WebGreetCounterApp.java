@@ -10,6 +10,7 @@ import java.util.concurrent.atomic.AtomicLong;
 @Controller
 public class WebGreetCounterApp {
     AtomicLong counter=new AtomicLong();
+
     @RequestMapping("/web/greetCounter")
     public String greeting(Model model, @RequestParam String input){
         model.addAttribute("name",input);

@@ -24,7 +24,11 @@ public class Streams {
 
         //EX4
         List<Integer> numbers4 = Arrays.asList(1, 3, -2, -4, -7, -3, -8, 12, 19, 6, 9, 10, 14);
-        double averageOfOdds = numbers4.stream().filter(n -> n % 2 != 0).mapToInt(Integer::intValue).average().getAsDouble();
+        double averageOfOdds = numbers4.stream()
+                .filter(n -> n % 2 != 0)
+                .mapToInt(Integer::intValue)
+                .average()
+                .getAsDouble();
         double averageOfOdds2 = numbers4.stream().filter(n -> n % 2 != 0).mapToInt(n -> n.intValue()).average().getAsDouble();
 
         //EX5
@@ -48,8 +52,10 @@ public class Streams {
         //EX9
         String string2 = "asdkjasfjalékndlfhiskldb";
         Map<Character, Integer> freq = string2.chars()
-                //.boxed().collect(Collectors.toMap(k -> Character.valueOf((char) k.intValue()),v -> 1,Integer::sum));
-                .mapToObj(c->(char)c).collect(Collectors.groupingBy(c->c,Math.toIntExact(Collectors.counting())));
+                //.boxed()
+                // .collect(Collectors.toMap(k -> Character.valueOf((char) k.intValue()),v -> 1,Integer::sum));
+                .mapToObj(c -> (char) c)
+                .collect(Collectors.groupingBy(c -> c, Math.toIntExact(Collectors.counting())));
         //v ->1, Integer.sum(1, v)));???
 
         //EX10
@@ -62,7 +68,7 @@ public class Streams {
 
         List<Fox> greenFox = foxes.stream().filter(f -> f.coloure.equals("green")).collect(Collectors.toList());
         List<Fox> greenFox5 = foxes.stream().filter(f -> f.coloure.equals("green") && f.age < 5).collect(Collectors.toList());
-        Map<String,Integer> foyFreq=foxes.stream().collect(Collectors.toMap(f->f.coloure,v->1,Integer::sum));
+        Map<String, Integer> foxFreq = foxes.stream().collect(Collectors.toMap(f -> f.coloure, v -> 1, Integer::sum));
 
     }
 }

@@ -1,0 +1,24 @@
+<!DOCTYPE html >
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>FoxClub</title>
+</head>
+<body>
+    <ul>
+        <li>
+            <a href="">Information</a>
+            <a href="add">Add new fox</a>
+            <a th:href="@{nutritionStore(name=${name})}">Nutrition store</a>
+            <a th:href="@{trickCenter(name=${name})}">Trick center</a>
+            <a href="">Action history</a>
+        </li>
+    </ul>
+    <img src="greenfox.png">
+<p th:text="|This is ${name}. Currently living on ${food} and ${drink}. He knows ${trick} tricks.|"></p>
+    <h3>Known tricks:</h3>
+<ul th:each="trick:${tricks}">
+    <li th:text="${trick}"></li>
+</ul>
+</body>
+</html>

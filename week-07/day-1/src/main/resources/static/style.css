@@ -1,0 +1,7 @@
+table{
+    background-color: antiquewhite;
+    display: flex;
+    justify-content: space-between;
+    width: 400px;
+    height: 200px;
+}

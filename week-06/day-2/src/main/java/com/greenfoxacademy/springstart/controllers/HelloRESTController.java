@@ -9,11 +9,12 @@ import java.util.concurrent.atomic.AtomicLong;
 
 @RestController
 public class HelloRESTController {
-    AtomicLong counter=new AtomicLong();
+    AtomicLong counter = new AtomicLong();
+
     @RequestMapping("/greeting")
-    @ResponseBody
-    public Greeting greeting( @RequestParam String name) {
-        Greeting greeting = new Greeting(counter.getAndIncrement(), "hello, "+name);
+    @ResponseBody//felesleges mert a restController egyben response body is
+    public Greeting greeting(@RequestParam String name) {
+        Greeting greeting = new Greeting(counter.getAndIncrement(), "hello, " + name);
         return greeting;
     }
 }

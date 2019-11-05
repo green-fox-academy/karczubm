@@ -1,0 +1,15 @@
+CREATE TABLE IF NOT EXISTS todoList (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    todo VARCHAR(255) NOT NULL,
+    isComplete BOOLEAN NOT NULL DEFAULT FALSE
+);
+
+SELECT * FROM todoList;
+
+INSERT INTO todoList (todo) VALUES ('');
+
+DELETE FROM todoList WHERE id=  ;
+
+UPDATE todoList SET isComplete=TRUE WHERE id=   ;
+
+

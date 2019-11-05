@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Fox</title>
+</head>
+<body>
+    <h1>Add new Fox</h1>
+    <form th:action="@{/add}" method="post">
+        <label for="name">Name:</label>
+        <input id="name" name="name" type="text">
+        <button type="submit">Create</button>
+    </form>
+</body>
+</html>

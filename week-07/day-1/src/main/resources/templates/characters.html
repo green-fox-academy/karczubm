@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <style href="style.css"></style>
+    <title>characters</title>
+</head>
+<body>
+<table>
+    <tr>
+        <th>Name:</th>
+        <th>Species:</th>
+        <th>Balance:</th>
+        <th>Index:</th>
+        <th>Title:</th>
+        <th>Personality</th>
+    </tr>
+    <tr th:each="account:${accountList}">
+        <td th:text="${account.getName()}"></td>
+        <td th:text="${account.getAnimalType()}"></td>
+        <td th:text="${account.getBalance()}"></td>
+        <!--<td th:text="${accountList.indexOf(account)}"></td>-->
+        <td th:text="${accountStat.index}"></td>
+        <td th:text="${account.isKing()} ? 'King':''"></td>
+        <td th:text="${account.isGoodGuy()} ? 'Good guy':'Bad guy'"></td>
+    </tr>
+</table>
+
+<form th:action="@{/characters}" method="post" th:object="${accountOwner}">
+    <label for="name">Money!</label>
+    <input type="text"
+           name="name"
+           id="name"
+           th:field="*{name}"
+           required>
+    <button type="submit">Raise</button>
+</form>
+
+<form th:action="@{/characters}" method="post" th:object="${accountOwner}">
+    <label for="newName">Name</label>
+    <input type="text"
+           id="newName"
+           th:field="*{name}"
+           required>
+    <label for="kind">Species</label>
+    <input type="text"
+           id="kind"
+           th:field="*{animalType}"
+           required>
+    <button type="submit">Add new</button>
+</form>
+
+</body>
+</html>
