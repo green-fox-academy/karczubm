@@ -5,20 +5,29 @@
     <title>ToDoList</title>
 </head>
 <body>
+<a th:href="@{assignees}">Assignees</a>
+<a th:href="@{undone/}">Not ready</a>
+<a th:href="@{add/}">Add new task</a>
 <h1>To Dos for today:</h1>
+<form method="post" th:action="@{/todo/}">
+    <label>Search:</label>
+    <input type="text" name="search">
+    <button type="submit">Search</button>
+</form>
 
-<table  style="border: 1px solid black">
+<table style="border: 1px solid black">
     <tr>
-       <th>ID</th>
-       <th>description</th>
-       <th>urgent</th>
-       <th>done</th>
+        <th>ID</th>
+        <th>description</th>
+        <th>urgent</th>
+        <th>done</th>
     </tr>
-    <tr th:each="todo:${todolist}" >
+    <tr th:each="todo:${todolist}">
         <td th:text="${todo.getId()}"></td>
         <td th:text="${todo.getTitle()}"></td>
         <td th:text="${todo.isUrgent()}"></td>
         <td th:text="${todo.isDone()}"></td>
+        <td ><a th:href="@{${todo.getId().toString()}/delete}">delete</a></td>
     </tr>
 </table>
 </body>

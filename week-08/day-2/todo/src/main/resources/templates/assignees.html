@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Email</th>
+    </tr>
+    <tr th:each="assignee:${assignees}">
+        <td th:text="${assignee.getName()}"></td>
+        <td th:text="${assignee.getEmail()}"></td>
+    </tr>
+</table>
+<form th:action="@{assignees/alter}" method="post" >
+    <label>Alter name</label>
+    <input type="text" name="name">
+    <input type="text" name="newName">
+    <button type="submit">alter</button>
+</form>
+<form th:action="@{assignees/delete}" method="post">
+    <label>Delete</label>
+    <input type="text" name="name">
+    <button type="submit">Delete</button>
+</form>
+<form th:action="@{assignees/add}" method="post">
+    <label>Add</label>
+    <input type="text" name="name">
+    <input type="text" name="email">
+    <button type="submit">Add</button>
+</form>
+</body>
+</html>
