@@ -34,4 +34,9 @@ public class AssigneeService implements AssigneeServicInterface {
     public void addAssignee(String name, String email) {
         repository.save(new Assignee(name,email));
     }
+
+    @Override
+    public Assignee findById(Long id) {
+        return repository.findById(id).get();
+    }
 }

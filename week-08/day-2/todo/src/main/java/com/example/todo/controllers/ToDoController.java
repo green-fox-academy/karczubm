@@ -31,7 +31,7 @@ public class ToDoAppController {
         return "todolist";
     }
 
-    @PostMapping("/")
+    @PostMapping("search")
     public String search(Model model, @RequestParam(name = "search") String search) {
         model.addAttribute("todolist", toDoService.findTitle(search));
         return "todolist";
@@ -43,16 +43,16 @@ public class ToDoAppController {
     @PostMapping("add")
     public String addTodo(Model model, @RequestParam(name = "newTodo") String newTodo) {
         toDoService.addToDo(newTodo);
-        model.addAttribute("todolist",toDoService.findAll());
-        return "todolist";
+        return "redirect:/todo/";
     }
-    @GetMapping("/{id}/delete")
-    public String deleteToDo(Model model,@PathVariable ("id") String id){
+    @GetMapping("/delete/{id}")
+    public String deleteToDo(@PathVariable ("id") String id ,Model model){
         toDoService.deleteById(id);
-        return "todolist";
+        model.addAttribute("todolist",toDoService.findAll());
+        return "redirect:/todo/";
     }
 
-    @GetMapping("/undone")
+    @GetMapping("undone")
     public String listUndoneTodos(Model model) {
         model.addAttribute("todolist",toDoService.findNotReady());
         return "todolist";
